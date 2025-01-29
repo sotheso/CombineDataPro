@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var contentOffset = CGFloat(0)
-    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     var body: some View {
         NavigationView{
@@ -33,6 +33,8 @@ struct ContentView: View {
         }
         // For iPad 
         .navigationViewStyle(StackNavigationViewStyle())
+        // رنگ دکمه برگشت
+        .accentColor(colorScheme ==  .dark ? .white : Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)))
     }
     
     
