@@ -41,6 +41,7 @@ struct ContentView: View {
     var content: some View {
         VStack{
             
+            ProfileRow()
             // other content
             
 // Table View FAQ...
@@ -60,12 +61,7 @@ struct ContentView: View {
                     MenuRow(title: "YouTube Channel", leftIcon: "play.rectangle.fill", rightIcon: "link")
                 })
             }
-            .padding(16)
-            .background(Color("Background 1"))
-            .background(VisualEffectBlur(blurStyle: .systemUltraThinMaterialDark ))
-            .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Color.white, lineWidth: 1).blendMode(.overlay))
-            .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .padding(.top, 20)
+            .blurBacground()
             
             Text("Version : 1.0.0")
                 .font(.footnote)
